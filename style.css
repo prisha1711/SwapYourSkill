@@ -1,3 +1,4 @@
+
 /* General Body Styles */
 body {
   display: flex;
@@ -5,8 +6,10 @@ body {
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   margin: 0;
-  background-color: #f8f9fa;
-  color: #343a40;
+  background-color: #f5f2ff; /* soft purple background */
+  color: #2e0252; /* deep purple text */
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 /* Header/Navbar Styles */
@@ -15,10 +18,15 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #212529; /* New Color */
+  background-color: #4b0082; /* indigo-purple header */
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   height: 80px;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 header h1 {
@@ -31,82 +39,91 @@ header nav a {
   text-decoration: none;
   color: #ffffff;
   font-weight: 500;
-  transition: text-decoration 0.3s;
+  transition: color 0.3s;
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  color: #d8b0ff; /* lighter purple hover */
 }
 
 /* This makes sure the main content pushes the footer down */
 main {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* === HOMEPAGE STYLES === */
 .hero {
   text-align: center;
   padding: 4rem 1rem;
-  background-color: #343a40;
+  background-color: #6a0dad; /* bright purple hero */
   color: white;
+  animation: fadeInUp 1s ease forwards;
 }
 .hero-logo {
-  width: 120px;
-  height: 120px;
+  width: 200px;
+  height: 200px;
   margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease forwards;
+  margin-top: 4rem;
 }
 .hero h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
   color: white;
+  animation: fadeInUp 1.2s ease forwards;
 }
 .hero p {
   font-size: 1.2rem;
   max-width: 600px;
   margin: 0 auto 2rem auto;
+  animation: fadeInUp 1.4s ease forwards;
 }
 .about {
   padding: 4rem 1rem;
   text-align: center;
   max-width: 900px;
   margin: auto;
+  animation: fadeInUp 1s ease forwards;
 }
 .about h3 {
   font-size: 2rem;
-  color: #212529; /* New Color */
+  color: #3d0075; /* dark purple headings */
+  animation: fadeIn 1s ease forwards;
 }
 
 /* === BUTTON STYLES === */
 .btn-light {
-    display: inline-block;
-    padding: 12px 25px;
-    border: none;
-    background: white;
-    color: #212529; /* New Color */
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s;
+  display: inline-block;
+  padding: 12px 25px;
+  border: none;
+  background: #e6ccff; /* soft purple button */
+  color: #2e0252; /* deep purple text */
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s;
 }
 .btn-light:hover {
-    background-color: #e2e2e2;
+  background-color: #d8b0ff; /* lighter purple hover */
+  transform: translateY(-2px);
 }
 .btn-primary {
   width: 100%;
   padding: 0.8rem;
   border: none;
-  background-color: #007bff; /* New Color */
+  background-color: #6a0dad; /* bright purple */
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.2s;
 }
 .btn-primary:hover {
-  background-color: #0056b3; /* Darker shade for hover */
+  background-color: #9b30ff; /* lighter hover shade */
+  transform: translateY(-2px);
 }
 
 /* === LOGIN & SIGN UP PAGE STYLES === */
@@ -123,6 +140,7 @@ main {
   max-width: 500px;
   display: flex;
   justify-content: center;
+  animation: fadeInUp 1s ease forwards;
 }
 .auth-image-section {
   flex: 1;
@@ -130,6 +148,7 @@ main {
   justify-content: center;
   align-items: center;
   padding: 2rem;
+  animation: fadeIn 1s ease forwards;
 }
 .auth-image-section img {
   max-width: 100%;
@@ -137,24 +156,26 @@ main {
   height: auto;
 }
 .auth-card {
-  background-color: #ffffff;
+  background-color: #f5f2ff; /* soft purple card background */
   padding: 2.5rem;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   width: 100%;
   max-width: 400px;
   text-align: center;
+  animation: fadeInUp 1s ease forwards;
 }
 .auth-logo {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 1.5rem;
-    border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  animation: fadeIn 1s ease forwards;
 }
 .auth-card h2 {
   margin-top: 0;
   margin-bottom: 2rem;
-  color: #333;
+  color: #2e0252; /* deep purple heading */
 }
 .input-group {
   text-align: left;
@@ -164,32 +185,35 @@ main {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 600;
-  color: #555;
+  color: #3d0075;
 }
 .input-group input {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #d8b0ff;
   border-radius: 4px;
   font-size: 1rem;
   box-sizing: border-box;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 .input-group input:focus {
   outline: none;
-  border-color: #007bff; /* New Color */
+  border-color: #6a0dad;
+  box-shadow: 0 0 8px rgba(106, 13, 173, 0.3);
 }
 .auth-switch {
   margin-top: 2rem;
   font-size: 0.9rem;
 }
 .auth-switch a {
-  color: #007bff; /* New Color */
+  color: #6a0dad;
   text-decoration: none;
   font-weight: 600;
+  transition: color 0.3s;
 }
 .auth-switch a:hover {
   text-decoration: underline;
+  color: #9b30ff;
 }
 @media (max-width: 850px) {
   .auth-image-section {
@@ -203,47 +227,49 @@ main {
 
 /* === FOOTER STYLES === */
 footer {
-    padding: 2rem;
-    background-color: #212529;
-    color: white;
-    margin-top: auto; /* Pushes footer to bottom */
+  padding: 2rem;
+  background-color: #4b0082; /* indigo-purple footer */
+  color: white;
+  margin-top: auto; /* Pushes footer to bottom */
+  animation: fadeIn 1s ease forwards;
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 1rem;
-}
-
-.footer-copyright {
-    flex-shrink: 0;
-}
-
-.footer-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1rem;
 }
 
 .footer-links a {
-    color: white;
-    text-decoration: none;
-    transition: text-decoration 0.3s;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
 }
-
 .footer-links a:hover {
-    text-decoration: underline;
+  color: #d8b0ff;
 }
 
 /* Responsive adjustments for the footer */
 @media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-    }
+  .footer-content {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 }
+
+/* === ANIMATIONS === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
