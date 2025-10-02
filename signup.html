@@ -22,10 +22,14 @@
     <div class="auth-form-section">
       <div class="auth-card">
         <h2>Join the Community</h2>
-        <form>
+        <form id="signup-form">
           <div class="input-group">
-              <label for="fullname">Full Name</label>
-              <input type="text" id="fullname" name="fullname" required>
+              <label for="firstname">First Name</label>
+              <input type="text" id="firstname" name="firstname" required>
+          </div>
+          <div class="input-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" name="lastname" required>
           </div>
           <div class="input-group">
             <label for="email">Email</label>
@@ -35,6 +39,25 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
           </div>
+          <div class="input-group">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+          </div>
+          
+          <div class="input-group">
+            <fieldset>
+              <legend>Preferred Languages</legend>
+              <div class="checkbox-container">
+                <div><input type="checkbox" id="lang-en" name="language" value="english"><label for="lang-en">English</label></div>
+                <div><input type="checkbox" id="lang-es" name="language" value="spanish"><label for="lang-es">Spanish</label></div>
+                <div><input type="checkbox" id="lang-fr" name="language" value="french"><label for="lang-fr">French</label></div>
+                <div><input type="checkbox" id="lang-de" name="language" value="german"><label for="lang-de">German</label></div>
+                <div><input type="checkbox" id="lang-zh" name="language" value="mandarin"><label for="lang-zh">Mandarin</label></div>
+              </div>
+            </fieldset>
+          </div>
+
+          <p id="validation-message" class="error-message"></p>
           <button type="submit" class="btn-primary">Create Account</button>
         </form>
         <p class="auth-switch">
@@ -47,5 +70,35 @@
       <img src="logo.png" alt="SwapYourSkill Large Logo">
     </div>
   </main>
+
+  <script>
+    const form = document.getElementById('signup-form');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirm-password');
+    const validationMessage = document.getElementById('validation-message');
+
+    form.addEventListener('submit', function(event) {
+      // 1. Check if passwords match
+      if (password.value !== confirmPassword.value) {
+        event.preventDefault(); // Stop form submission
+        validationMessage.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      // 2. Check if at least two languages are selected
+      const languageCheckboxes = document.querySelectorAll('input[name="language"]:checked');
+      if (languageCheckboxes.length < 2) {
+        event.preventDefault(); // Stop form submission
+        validationMessage.textContent = 'Please select at least 2 languages.';
+        return;
+      }
+      
+      // If all checks pass, clear any previous error message
+      validationMessage.textContent = '';
+      
+      // The form will now submit as normal
+    });
+  </script>
+
 </body>
 </html>

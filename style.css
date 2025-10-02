@@ -48,6 +48,7 @@ header nav a:hover {
 /* This makes sure the main content pushes the footer down */
 main {
   flex-grow: 1;
+  padding-top: 80px; /* Account for the fixed header */
 }
 
 /* === HOMEPAGE STYLES === */
@@ -130,7 +131,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 160px); /* Adjusted for header and footer */
+  min-height: calc(100vh - 80px); /* Adjusted for header */
   padding: 2rem;
   box-sizing: border-box;
 }
@@ -214,6 +215,7 @@ main {
   text-decoration: underline;
   color: #9b30ff;
 }
+
 @media (max-width: 850px) {
   .auth-image-section {
     display: none;
@@ -223,6 +225,76 @@ main {
     width: 100%;
   }
 }
+
+/* === SKILL SELECTION PAGES === */
+.skill-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  text-align: left;
+}
+
+.skill-checkbox-grid fieldset {
+  border: 1px solid #d8b0ff;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.skill-checkbox-grid legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: #3d0075;
+}
+
+.skill-checkbox-grid div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.skill-checkbox-grid input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.75rem;
+}
+
+
+/* === NEW STYLES FOR CHECKBOXES AND VALIDATION === */
+.input-group fieldset {
+  border: 1px solid #d8b0ff;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.input-group legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: #3d0075;
+}
+
+.checkbox-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.checkbox-container div {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.error-message {
+  color: #c70039;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  min-height: 1.2em;
+}
+
 
 /* === FOOTER STYLES === */
 footer {

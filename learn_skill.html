@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Skills - SwapYourSkill</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+  <header>
+    <h1>SwapYourSkill</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>
+
+  <main class="auth-page-container">
+    <div class="auth-form-section">
+      <div class="auth-card" style="max-width: 700px;">
+        <h2>What skills do you want to learn?</h2>
+        <p style="margin-bottom: 2rem;">Choose the skills you are interested in acquiring.</p>
+        
+        <form id="learn-skills-form">
+          <div id="error-message" class="error-message"></div>
+          <div class="skill-checkbox-grid">
+            <!-- Technology -->
+            <fieldset>
+              <legend>Technology</legend>
+              <div><input type="checkbox" id="learn-python" name="learn-skill"><label for="learn-python">Python</label></div>
+              <div><input type="checkbox" id="learn-js" name="learn-skill"><label for="learn-js">JavaScript</label></div>
+              <div><input type="checkbox" id="learn-webdev" name="learn-skill"><label for="learn-webdev">Web Development</label></div>
+              <div><input type="checkbox" id="learn-datasci" name="learn-skill"><label for="learn-datasci">Data Science</label></div>
+            </fieldset>
+            <!-- Creative -->
+            <fieldset>
+              <legend>Creative</legend>
+              <div><input type="checkbox" id="learn-guitar" name="learn-skill"><label for="learn-guitar">Guitar</label></div>
+              <div><input type="checkbox" id="learn-piano" name="learn-skill"><label for="learn-piano">Piano</label></div>
+              <div><input type="checkbox" id="learn-photoshop" name="learn-skill"><label for="learn-photoshop">Photoshop</label></div>
+              <div><input type="checkbox" id="learn-drawing" name="learn-skill"><label for="learn-drawing">Drawing</label></div>
+            </fieldset>
+            <!-- Lifestyle -->
+            <fieldset>
+              <legend>Lifestyle</legend>
+              <div><input type="checkbox" id="learn-baking" name="learn-skill"><label for="learn-baking">Baking</label></div>
+              <div><input type="checkbox" id="learn-cooking" name="learn-skill"><label for="learn-cooking">Cooking</label></div>
+              <div><input type="checkbox" id="learn-gardening" name="learn-skill"><label for="learn-gardening">Gardening</label></div>
+              <div><input type="checkbox" id="learn-yoga" name="learn-skill"><label for="learn-yoga">Yoga</label></div>
+            </fieldset>
+          </div>
+          <a href="dashboard.html" id="save-button" class="btn-primary" style="text-decoration: none; padding: 0.8rem 0; display: block; margin-top: 2rem;">Save and Go to Dashboard</a>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const saveButton = document.getElementById('save-button');
+    const form = document.getElementById('learn-skills-form');
+    const errorMessage = document.getElementById('error-message');
+
+    saveButton.addEventListener('click', function(event) {
+      const checkedBoxes = form.querySelectorAll('input[name="learn-skill"]:checked');
+      
+      if (checkedBoxes.length < 1) {
+        event.preventDefault(); // Stop the link from navigating
+        errorMessage.textContent = 'Please select at least one skill you want to learn.';
+      } else {
+        errorMessage.textContent = ''; // Clear error if valid
+      }
+    });
+  </script>
+
+</body>
+</html>
