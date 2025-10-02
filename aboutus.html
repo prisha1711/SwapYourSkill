@@ -1,350 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About SwapYourSkill | Our Story</title>
-    <!-- Load Inter Font -->
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-        /* --- CSS Variables and Global Styles --- */
-        :root {
-            --primary-dark: #5A189A; /* Deep Purple */
-            --accent-light: #9D4EDD; /* Brighter Purple */
-            --background-light: #f9fafb;
-            --text-dark: #2d3748; /* Approximated dark gray */
-            --text-medium: #4a5568; /* Approximated medium gray */
-            --white: #ffffff;
-        }
+      :root {
+        --primary-dark: #5a189a; /* Deep Purple */
+        --accent-light: #9d4edd; /* Brighter Purple */
+        --background-light: #f9fafb;
+        --text-dark: #2d3748; /* Approximated dark gray */
+        --text-medium: #4a5568; /* Approximated medium gray */
+        --white: #ffffff;
+      }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--background-light);
-            color: var(--text-dark);
-            line-height: 1.6;
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--background-light);
+        color: var(--text-dark);
+        line-height: 1.6;
+      }
 
-        /* --- Reusable Layout Container --- */
+      /* --- Reusable Layout Container --- */
+      .container {
+        max-width: 1280px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem; /* px-4 */
+        padding-right: 1rem; /* px-4 */
+      }
+
+      /* Small (sm) breakpoint */
+      @media (min-width: 640px) {
         .container {
-            max-width: 1280px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem; /* px-4 */
-            padding-right: 1rem; /* px-4 */
+          padding-left: 1.5rem; /* sm:px-6 */
+          padding-right: 1.5rem; /* sm:px-6 */
         }
-        
-        /* Small (sm) breakpoint */
-        @media (min-width: 640px) {
-            .container {
-                padding-left: 1.5rem; /* sm:px-6 */
-                padding-right: 1.5rem; /* sm:px-6 */
-            }
-        }
+      }
 
-        /* Large (lg) breakpoint */
-        @media (min-width: 1024px) {
-            .container {
-                padding-left: 2rem; /* lg:px-8 */
-                padding-right: 2rem; /* lg:px-8 */
-            }
+      /* Large (lg) breakpoint */
+      @media (min-width: 1024px) {
+        .container {
+          padding-left: 2rem; /* lg:px-8 */
+          padding-right: 2rem; /* lg:px-8 */
         }
+      }
 
-        /* --- Header Styles --- */
-        .header {
-            background-color: var(--primary-dark);
-            color: var(--white);
-            padding-top: 4rem; /* py-16 */
-            padding-bottom: 4rem; /* py-16 */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-        }
-        
+      /* --- Header Styles --- */
+      .header {
+        background-color: var(--primary-dark);
+        color: var(--white);
+        padding-top: 4rem; /* py-16 */
+        padding-bottom: 4rem; /* py-16 */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+      }
+
+      .header h1 {
+        font-size: 2.25rem; /* text-4xl */
+        font-weight: 800; /* font-extrabold */
+        margin-bottom: 0.75rem; /* mb-3 */
+        line-height: 1.25; /* leading-tight */
+      }
+
+      .header p {
+        font-size: 1.25rem; /* text-xl */
+        font-weight: 300; /* font-light */
+        color: var(--accent-light);
+      }
+
+      /* Responsive Header Text */
+      @media (min-width: 640px) {
         .header h1 {
-            font-size: 2.25rem; /* text-4xl */
-            font-weight: 800; /* font-extrabold */
-            margin-bottom: 0.75rem; /* mb-3 */
-            line-height: 1.25; /* leading-tight */
+          font-size: 3.75rem; /* sm:text-6xl */
         }
-        
         .header p {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 300; /* font-light */
-            color: var(--accent-light);
+          font-size: 1.5rem; /* sm:text-2xl */
         }
+      }
 
-        /* Responsive Header Text */
-        @media (min-width: 640px) {
-            .header h1 {
-                font-size: 3.75rem; /* sm:text-6xl */
-            }
-            .header p {
-                font-size: 1.5rem; /* sm:text-2xl */
-            }
-        }
-        
-        /* --- Main Content Layout --- */
-        .main {
-            padding-top: 3rem; /* py-12 */
-            padding-bottom: 5rem; /* sm:py-20 */
-        }
+      /* --- Main Content Layout --- */
+      .main {
+        padding-top: 3rem; /* py-12 */
+        padding-bottom: 5rem; /* sm:py-20 */
+      }
 
-        /* --- Mission Section --- */
-        .card {
-            background-color: var(--white);
-            padding: 2.5rem; /* p-10 (sm) */
-            border-radius: 1rem; /* rounded-2xl */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* shadow-xl */
-            border-top: 4px solid var(--accent-light); /* border-t-4 border-accent-light */
-            margin-bottom: 4rem; /* mb-16 */
-        }
-        .card h2 {
-            font-size: 2.25rem; /* text-4xl (sm) */
-            font-weight: 700; /* font-bold */
-            color: var(--primary-dark);
-            margin-bottom: 1.5rem; /* mb-6 */
-        }
-        .card p {
-            font-size: 1.125rem; /* text-lg */
-            color: var(--text-medium);
-            margin-bottom: 1.5rem; /* space-y-6 */
-        }
-        .card .vision {
-            font-weight: 500; /* font-medium */
-            color: var(--primary-dark);
-        }
+      /* --- Mission Section --- */
+      .card {
+        background-color: var(--white);
+        padding: 2.5rem; /* p-10 (sm) */
+        border-radius: 1rem; /* rounded-2xl */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 8px 10px -6px rgba(0, 0, 0, 0.05); /* shadow-xl */
+        border-top: 4px solid var(--accent-light); /* border-t-4 border-accent-light */
+        margin-bottom: 4rem; /* mb-16 */
+      }
+      .card h2 {
+        font-size: 2.25rem; /* text-4xl (sm) */
+        font-weight: 700; /* font-bold */
+        color: var(--primary-dark);
+        margin-bottom: 1.5rem; /* mb-6 */
+      }
+      .card p {
+        font-size: 1.125rem; /* text-lg */
+        color: var(--text-medium);
+        margin-bottom: 1.5rem; /* space-y-6 */
+      }
+      .card .vision {
+        font-weight: 500; /* font-medium */
+        color: var(--primary-dark);
+      }
 
-        /* --- Story Section (Grid) --- */
+      /* --- Story Section (Grid) --- */
+      .story-grid {
+        display: grid;
+        gap: 2.5rem; /* gap-10 */
+        align-items: center;
+      }
+
+      .story-grid h2 {
+        font-size: 2.25rem; /* text-4xl (sm) */
+        font-weight: 700;
+        color: var(--text-dark);
+      }
+
+      /* Large (lg) breakpoint for two columns */
+      @media (min-width: 1024px) {
         .story-grid {
-            display: grid;
-            gap: 2.5rem; /* gap-10 */
-            align-items: center;
+          grid-template-columns: repeat(2, minmax(0, 1fr)); /* lg:grid-cols-2 */
         }
+      }
 
-        .story-grid h2 {
-            font-size: 2.25rem; /* text-4xl (sm) */
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-        
-        /* Large (lg) breakpoint for two columns */
-        @media (min-width: 1024px) {
-            .story-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr)); /* lg:grid-cols-2 */
-            }
-        }
-        
-        .story-graphic {
-            height: 20rem; /* sm:h-80 */
-            background-color: var(--accent-light);
-            background-color: rgba(157, 78, 221, 0.1); /* bg-opacity-10 */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
+      .story-graphic {
+        height: 20rem; /* sm:h-80 */
+        background-color: var(--accent-light);
+        background-color: rgba(157, 78, 221, 0.1); /* bg-opacity-10 */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .text-center {
+        text-align: center;
+      }
 
-        .story-graphic svg {
-            width: 6rem; /* w-24 */
-            height: 6rem; /* h-24 */
-            color: var(--primary-dark);
-            opacity: 0.8;
-        }
-        
-        /* --- Values Section --- */
-        .values-section {
-            padding-top: 4rem; /* pt-16 */
-        }
-        .values-section h2 {
-            text-align: center;
-            font-size: 2.25rem; /* sm:text-4xl */
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 3rem; /* mb-12 */
-        }
+      .story-graphic svg {
+        width: 6rem; /* w-24 */
+        height: 6rem; /* h-24 */
+        color: var(--primary-dark);
+        opacity: 0.8;
+      }
 
+      /* --- Values Section --- */
+      .values-section {
+        padding-top: 4rem; /* pt-16 */
+      }
+      .values-section h2 {
+        text-align: center;
+        font-size: 2.25rem; /* sm:text-4xl */
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 3rem; /* mb-12 */
+      }
+
+      .values-grid {
+        display: grid;
+        gap: 2rem; /* gap-8 */
+      }
+
+      /* Medium (md) breakpoint for three columns */
+      @media (min-width: 768px) {
         .values-grid {
-            display: grid;
-            gap: 2rem; /* gap-8 */
+          grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
         }
-        
-        /* Medium (md) breakpoint for three columns */
-        @media (min-width: 768px) {
-            .values-grid {
-                grid-template-columns: repeat(3, minmax(0, 1fr)); /* md:grid-cols-3 */
-            }
-        }
+      }
 
-        .value-item {
-            background-color: var(--white);
-            padding: 2rem; /* p-8 */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-            transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
-        }
-        
-        .value-item:hover {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* hover:shadow-2xl */
-            border-bottom: 4px solid var(--accent-light); /* hover:border-b-4 hover:border-accent-light */
-        }
+      .value-item {
+        background-color: var(--white);
+        padding: 2rem; /* p-8 */
+        border-radius: 0.75rem; /* rounded-xl */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        transition: box-shadow 0.3s ease, border-bottom 0.3s ease;
+      }
 
-        .value-item svg {
-            width: 2.5rem; /* w-10 */
-            height: 2.5rem; /* h-10 */
-            color: var(--accent-light);
-            margin-bottom: 1rem; /* mb-4 */
-        }
+      .value-item:hover {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 8px 10px -6px rgba(0, 0, 0, 0.05); /* hover:shadow-2xl */
+        border-bottom: 4px solid var(--accent-light); /* hover:border-b-4 hover:border-accent-light */
+        transform: scale(1.1);
+        transition: transform 0.6s ease-in-out;
+      }
 
-        .value-item h3 {
-            font-size: 1.25rem; /* text-xl */
-            font-weight: 600; /* font-semibold */
-            color: var(--primary-dark);
-            margin-bottom: 0.75rem; /* mb-3 */
-        }
+      .value-item svg {
+        width: 2.5rem; /* w-10 */
+        height: 2.5rem; /* h-10 */
+        color: var(--accent-light);
+        margin-bottom: 1rem; /* mb-4 */
+      }
 
-        .value-item p {
-            color: var(--text-medium);
-        }
+      .value-item h3 {
+        font-size: 1.25rem; /* text-xl */
+        font-weight: 600; /* font-semibold */
+        color: var(--primary-dark);
+        margin-bottom: 0.75rem; /* mb-3 */
+      }
 
-        /* --- Footer (CTA) Section --- */
-        .footer-cta {
-            background-color: var(--primary-dark);
-            opacity: 0.95; /* bg-opacity-95 */
-            padding-top: 3rem; /* py-12 */
-            margin-top: 4rem; /* mt-16 */
-        }
+      .value-item p {
+        color: var(--text-medium);
+      }
 
-        .footer-cta h3 {
-            font-size: 1.5rem; /* text-2xl */
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 1rem; /* mb-4 */
-        }
+      /* --- Footer (CTA) Section --- */
+      .footer-cta {
+        background-color: var(--primary-dark);
+        opacity: 0.95; /* bg-opacity-95 */
+        padding-top: 3rem; /* py-12 */
+        margin-top: 4rem; /* mt-16 */
+        padding-bottom: 3rem; /* Added padding for spacing */
+      }
 
-        .footer-cta p {
-            font-size: 1.125rem; /* text-lg */
-            color: var(--accent-light);
-            margin-bottom: 1.5rem; /* mb-6 */
-        }
+      .footer-cta h3 {
+        font-size: 1.5rem; /* text-2xl */
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 1rem; /* mb-4 */
+      }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-light);
-            color: var(--white);
-            font-weight: 700;
-            padding: 0.75rem 2rem; /* py-3 px-8 */
-            border-radius: 9999px; /* rounded-full */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05); /* shadow-xl */
-            transition: all 0.3s ease;
-            text-decoration: none;
-            text-align: center;
-        }
+      .footer-cta p {
+        font-size: 1.125rem; /* text-lg */
+        color: var(--accent-light);
+        margin-bottom: 1.5rem; /* mb-6 */
+      }
 
-        .cta-button:hover {
-            background-color: var(--white);
-            color: var(--primary-dark);
-            transform: scale(1.05);
+      .cta-button {
+        display: inline-block;
+        background-color: var(--accent-light);
+        color: var(--white);
+        font-weight: 700;
+        padding: 0.75rem 2rem; /* py-3 px-8 */
+        border-radius: 9999px; /* rounded-full */
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 8px 10px -6px rgba(0, 0, 0, 0.05); /* shadow-xl */
+        transition: all 0.3s ease;
+        text-decoration: none;
+        text-align: center;
+      }
+
+      .cta-button:hover {
+        background-color: var(--white);
+        color: var(--primary-dark);
+        transform: scale(1.05);
+      }
+
+      footer {
+        padding: 2rem;
+        background-color: #4b0082; /* indigo-purple footer */
+        color: white;
+        margin-top: auto; /* Pushes footer to bottom */
+      }
+
+      .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 1rem;
+      }
+
+      .footer-links a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+        margin-left: 1.8rem;
+      }
+
+      .footer-links a:hover {
+        color: #d8b0ff;
+      }
+
+      /* Responsive adjustments for the footer */
+      @media (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          justify-content: center;
+          text-align: center;
         }
+      }
     </style>
-</head>
-<body class="antialiased">
-
-    <!-- Header Section -->
+  </head>
+  <body class="antialiased">
     <header class="header">
-        <div class="container">
-            <h1>Exchange Skills, Learn Together.</h1>
-            <p>
-                Redefining learning by treating knowledge as the ultimate currency.
-            </p>
-        </div>
+      <div class="container">
+        <h1>Exchange Skills, Learn Together.</h1>
+        <p>
+          Redefining learning by treating knowledge as the ultimate currency.
+        </p>
+      </div>
     </header>
 
     <main class="main">
-        <div class="container">
+      <div class="container">
+        <section id="mission">
+          <div class="card">
+            <h2>Our Core Mission</h2>
+            <div class="space-y">
+              <p>
+                The mission of **SwapYourSkill** is to tear down the financial
+                and geographical barriers that keep valuable knowledge locked
+                away. We believe that everyone is both a student and a teacher,
+                and that the best learning happens through direct, reciprocal
+                exchange—a fair trade of knowledge for knowledge.
+              </p>
+              <p class="vision">
+                We envision a dynamic global community where learning is
+                limitless, driven entirely by the collective wealth of human
+                experience and skill.
+              </p>
+            </div>
+          </div>
+        </section>
 
-            <!-- Section 1: Our Mission and Vision -->
-            <section id="mission">
-                <div class="card">
-                    <h2>Our Core Mission</h2>
-                    <div class="space-y">
-                        <p>
-                            The mission of **SwapYourSkill** is to tear down the financial and geographical barriers that keep valuable knowledge locked away. We believe that everyone is both a student and a teacher, and that the best learning happens through direct, reciprocal exchange—a fair trade of knowledge for knowledge.
-                        </p>
-                        <p class="vision">
-                            We envision a dynamic global community where learning is limitless, driven entirely by the collective wealth of human experience and skill.
-                        </p>
-                    </div>
-                </div>
-            </section>
+        <section id="story" class="mb-16">
+          <div class="story-grid">
+            <div class="story-graphic">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
+                ></path>
+              </svg>
+            </div>
 
-            <!-- Section 2: The Founding Story & The Problem We Solve -->
-            <section id="story" class="mb-16">
-                <div class="story-grid">
-                    
-                    <!-- Graphic placeholder using brand colors -->
-                    <div class="story-graphic">
-                         <!-- Icon representing exchange or swap -->
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                        </svg>
-                    </div>
+            <div class="space-y">
+              <h2>How It All Began</h2>
+              <p>
+                Our journey began in September 2024, driven by a simple, yet
+                profound realization: the traditional education model is broken.
+                It forces high fees and rigid structures, making niche skills
+                and specialized, one-on-one teaching inaccessible to most.
+              </p>
+              <p>
+                Our founding group— Prisha Gupta, Prachi Sangaonkar, Rohit
+                Godaba, and Tuvijith Pillarishetty—realized that millions of
+                people possess skills that are highly valued, yet they can't
+                afford to learn new ones. They built SwapYourSkill to solve this
+                by creating a peer-to-peer ecosystem where the cost is zero, and
+                the currency is your own expertise.
+              </p>
+            </div>
+          </div>
+        </section>
 
-                    <div class="space-y">
-                        <h2>How It All Began</h2>
-                        <p>
-                            Our journey began in September 2024, driven by a simple, yet profound realization: the traditional education model is broken. It forces high fees and rigid structures, making niche skills and specialized, one-on-one teaching inaccessible to most.
-                        </p>
-                        <p>
-                            Our founding group— Prisha Gupta, Prachi Sangaonkar, Rohit Godaba, and Tuvijith Pillarishetty—realized that millions of people possess skills that are highly valued, yet they can't afford to learn new ones. They built SwapYourSkill to solve this by creating a peer-to-peer ecosystem where the cost is zero, and the currency is your own expertise.
-                        </p>
-                    </div>
-                </div>
-            </section>
+        <section id="values" class="values-section">
+          <h2>Our Guiding Principles</h2>
 
-            <!-- Section 3: Core Values -->
-            <section id="values" class="values-section">
-                <h2>Our Guiding Principles</h2>
-                
-                <div class="values-grid">
-                    
-                    <!-- Value 1: Reciprocity & Trust -->
-                    <div class="value-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 15v2m0-6V7m0 0c-2.209 0-4.116.892-5.498 2.217C4.12 10.542 3 12.75 3 15h18c0-2.25-1.12-4.458-2.502-5.783C16.116 7.892 14.209 7 12 7c-2.209 0-4.116.892-5.498 2.217C4.12 10.542 3 12.75 3 15h18c0-2.25-1.12-4.458-2.502-5.783C16.116 7.892 14.209 7 12 7z"></path></svg>
-                        <h3>Reciprocity & Trust</h3>
-                        <p>We operate on the principle that genuine skill exchange builds powerful relationships, fostering a community founded on mutual respect and shared value.</p>
-                    </div>
+          <div class="values-grid">
+            <div class="value-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 15v2m0-6V7m0 0c-2.209 0-4.116.892-5.498 2.217C4.12 10.542 3 12.75 3 15h18c0-2.25-1.12-4.458-2.502-5.783C16.116 7.892 14.209 7 12 7c-2.209 0-4.116.892-5.498 2.217C4.12 10.542 3 12.75 3 15h18c0-2.25-1.12-4.458-2.502-5.783C16.116 7.892 14.209 7 12 7z"
+                ></path>
+              </svg>
+              <h3>Reciprocity & Trust</h3>
+              <p>
+                We operate on the principle that genuine skill exchange builds
+                powerful relationships, fostering a community founded on mutual
+                respect and shared value.
+              </p>
+            </div>
 
-                    <!-- Value 2: Zero-Cost Accessibility -->
-                    <div class="value-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v5m0 0V7m0 0a2 2 0 110-4 2 2 0 010 4zM16 11H8m8 0a2 2 0 10-4 0 2 2 0 004 0z"></path></svg>
-                        <h3>Zero-Cost Accessibility</h3>
-                        <p>Financial status should never limit learning. We ensure that quality education and mentorship are freely available to anyone willing to trade their expertise.</p>
-                    </div>
+            <div class="value-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v5m0 0V7m0 0a2 2 0 110-4 2 2 0 010 4zM16 11H8m8 0a2 2 0 10-4 0 2 2 0 004 0z"
+                ></path>
+              </svg>
+              <h3>Zero-Cost Accessibility</h3>
+              <p>
+                Financial status should never limit learning. We ensure that
+                quality education and mentorship are freely available to anyone
+                willing to trade their expertise.
+              </p>
+            </div>
 
-                    <!-- Value 3: Practical Application -->
-                    <div class="value-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0c1.105 0 2-.895 2-2V7a2 2 0 00-2-2h-4c-1.105 0-2 .895-2 2v2m-4 0V7a2 2 0 012-2h2a2 2 0 012 2v2M5 11h2m0 0a2 2 0 002 2h2a2 2 0 002-2v-2m-4 0V7a2 2 0 012-2h2a2 2 0 012 2v2"></path></svg>
-                        <h3>Practical Application</h3>
-                        <p>We prioritize the exchange of real, actionable skills that members can immediately apply to projects, careers, or personal growth.</p>
-                    </div>
-
-                </div>
-            </section>
-
-        </div>
+            <div class="value-item">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 11H5m14 0c1.105 0 2-.895 2-2V7a2 2 0 00-2-2h-4c-1.105 0-2 .895-2 2v2m-4 0V7a2 2 0 012-2h2a2 2 0 012 2v2M5 11h2m0 0a2 2 0 002 2h2a2 2 0 002-2v-2m-4 0V7a2 2 0 012-2h2a2 2 0 012 2v2"
+                ></path>
+              </svg>
+              <h3>Practical Application</h3>
+              <p>
+                We prioritize the exchange of real, actionable skills that
+                members can immediately apply to projects, careers, or personal
+                growth.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
-    <!-- CTA Section -->
-    <footer class="footer-cta">
-        <div class="container text-center">
-            <h3>Join the Skill Exchange Revolution.</h3>
-            <p>Start offering your unique skills and discover what you can learn in return today.</p>
-            <a href="signup.html" class="cta-button">
-                Start Swapping
-            </a>
-        </div>
-    </footer>
+    <section class="footer-cta">
+      <div class="container text-center">
+        <h3>Join the Skill Exchange Revolution.</h3>
+        <p>
+          Start offering your unique skills and discover what you can learn in
+          return today.
+        </p>
+        <a href="signup.html" class="cta-button"> Start Swapping </a>
+      </div>
+    </section>
 
-</body>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Disclaimer</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Privacy Policy</a>
+        </div>
+        <div class="footer-copyright">
+          &copy; 2025 SwapYourSkill. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
