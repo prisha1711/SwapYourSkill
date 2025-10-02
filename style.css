@@ -319,6 +319,7 @@ footer {
   color: white;
   text-decoration: none;
   transition: color 0.3s;
+  margin-left:1.8rem;
 }
 .footer-links a:hover {
   color: #d8b0ff;
